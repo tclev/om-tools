@@ -245,7 +245,7 @@
         [descriptor-sym descriptor] (mixin-descriptor name (:mixins config))]
     `(do
        ~descriptor
-       (s/defn ~name
+       (defn ~name
          ~@(when doc-string? [doc-string?])
          ~@(when attr-map? [attr-map?])
          ~arglist
@@ -326,7 +326,7 @@
         [config body] (separate-component-config body)]
     (assert (vector? args) "Parameter declaration should be a vector")
     (assert (not (:mixins config)) "Mixins are not suppoted in multi-component")
-    `(s/defmethod ~multifn ~dispatch-val
+    `(defmethod ~multifn ~dispatch-val
        ~@(when fn-name? [fn-name?])
        ~args
        (reify ~@(component-spec body)))))

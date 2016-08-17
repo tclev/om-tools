@@ -1,6 +1,6 @@
 (ns om-tools.dom
   "DOM element constructors for React. Mirrors om.dom namespace"
-  (:refer-clojure :exclude [map meta time])
+  (:refer-clojure :exclude [map meta time use mask])
   #+cljs
   (:require-macros [om-tools.dom :as dom])
   (:require
